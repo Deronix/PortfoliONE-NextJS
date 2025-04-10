@@ -1,0 +1,109 @@
+:root {
+  --background: #030f0f;
+  --back: #0b2b26;
+  --form: #163832;
+  --foreground: #2d554b;
+  --transground: #2d554b6a;
+
+  --text: #c8dcce;
+  --hover: #daf1de;
+  --link: #94f5a4;
+
+  --gregrad: linear-gradient(
+    90deg,
+    rgba(5, 31, 32, 1) 0%,
+    rgba(11, 43, 38, 1) 15%,
+    rgba(22, 56, 50, 1) 30%,
+    rgba(35, 83, 71, 1) 60%,
+    rgba(142, 182, 155, 1) 85%,
+    rgba(218, 241, 222, 1) 100%
+  );
+}
+
+/* Large Devices, Wide Screens: 992px - 1200px */
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+}
+
+/* Medium Devices, Desktops: 768px - 992px */
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+}
+
+/* Small Devices, Tablets: 480px - 768px */
+@media only screen and (min-width: 480px) and (max-width: 768px) {
+}
+
+/* Extra Small Devices, Phones: 320px - 480px */
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+}
+
+/* Custom, iPhone Retina: up to 320px */
+@media only screen and (max-width: 320px) {
+}
+/*.customCursor {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  will-change: transform;
+}
+
+.cursorInner {
+  width: 15px;
+  height: 15px;
+  border: 2px solid var(--link);
+  border-radius: 50%;
+  background: var(--hover);
+  mix-blend-mode: difference;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+a, button, input, textarea {
+  cursor: none !important;
+}
+*/
+/*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX Body XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
+
+html,
+body {
+  /*cursor: none !important;*/
+  max-width: 100vw;
+  overflow-x: hidden;
+  scrollbar-width: none;
+}
+
+* a {
+  color: var(--link);
+}
+
+body {
+  color: var(--text);
+  background: var(--gregrad);
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--back);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--foreground);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--link);
+}

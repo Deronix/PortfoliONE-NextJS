@@ -1,0 +1,769 @@
+/* page.module.css */
+
+/* Yeni animasyon stilleri */
+@keyframes morph {
+  0% {
+    border-radius: 40% 60% 60% 40% / 70% 30% 70% 30%;
+  }
+  100% {
+    border-radius: 30% 70% 70% 30% / 40% 40% 60% 60%;
+  }
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.titleUnderline {
+  width: 0;
+  height: 3px;
+  background: var(--hover);
+  animation: underlineGrow 1s 1s forwards;
+}
+
+@keyframes underlineGrow {
+  to {
+    width: 100%;
+  }
+}
+.glowingOrb {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, var(--link) 0%, transparent 70%);
+  filter: blur(80px);
+  animation: morph 8s infinite alternate;
+}
+
+.profilePhoto {
+  border: 3px solid var(--foreground);
+  box-shadow: 0 0 30px var(--hover) inset;
+  transition: all 0.5s ease;
+}
+
+.profilePhoto:hover {
+  transform: scale(1.05) rotate(5deg);
+}
+
+.titleLetter {
+  display: inline-block;
+  text-shadow: 0 0 20px var(--link), 0 0 40px var(--hover);
+  transition: transform 0.3s ease;
+}
+
+.titleLetter:hover {
+  transform: translateY(-10px) rotate(10deg);
+}
+
+.titleUnderline {
+  width: 0;
+  height: 3px;
+  background: var(--hover);
+  animation: underlineGrow 1s 1s forwards;
+}
+
+@keyframes underlineGrow {
+  to {
+    width: 100%;
+  }
+}
+/*
+.cursorTrail {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border: 2px solid var(--link);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: pulse 1.5s infinite;
+}
+*/
+@keyframes pulse {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+.glowingOrb {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, var(--link) 0%, transparent 70%);
+  filter: blur(80px);
+  animation: morph 8s infinite alternate;
+}
+
+.skillCard {
+  perspective: 1000px;
+}
+
+.skillCard:hover .skillIcon {
+  transform: rotateY(180deg) scale(1.2);
+}
+
+.skillIcon {
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.projectCard:hover img {
+  transform: scale(1.1) rotate(1deg) translateZ(20px);
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3)) contrast(1.2);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.submitButton {
+  position: relative;
+  overflow: hidden;
+}
+
+.submitButton::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, var(--link), transparent);
+  animation: shine 3s infinite;
+}
+
+@keyframes shine {
+  from {
+    transform: translateX(-100%) rotate(45deg);
+  }
+  to {
+    transform: translateX(100%) rotate(45deg);
+  }
+}
+
+/* Mevcut stillere eklemeler */
+
+/* page.module.css */
+
+/* Base Styles */
+.progressContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--transground);
+  z-index: 100;
+}
+
+.progressBar {
+  height: 100%;
+  background: var(--link);
+  width: 0%;
+  border-radius: 2px;
+}
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  position: relative;
+  background: var(--back);
+  border-radius: 0 0 30px 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.heroContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.heroTitle {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  color: var(--hover);
+  line-height: 1.2;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.highlight {
+  color: var(--link);
+  text-shadow: 0 0 15px var(--link);
+  display: inline-block;
+}
+
+.heroSubtitle {
+  font-size: 1.5rem;
+  color: var(--text);
+  margin-bottom: 2rem;
+}
+
+.section {
+  padding: 4rem 2rem;
+  margin: 3rem auto;
+  background: var(--form);
+  border-radius: 20px;
+  max-width: 1200px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--link);
+  position: relative;
+  padding-bottom: 0.5rem;
+  animation: neonPulse 2s infinite;
+}
+
+.sectionTitle::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: var(--foreground);
+}
+
+/* New Photo Section Styles */
+.photoSection {
+  padding-left: 15vw;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.profilePhoto {
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid var(--foreground);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+}
+
+.nameContainer {
+  position: relative;
+  z-index: 2;
+}
+
+.mainTitle {
+  font-size: 4.5rem;
+  color: var(--hover);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.subTitle {
+  font-size: 2rem;
+  color: var(--link);
+  margin-left: 0.5rem;
+  position: relative;
+}
+
+.subTitle::before {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100px;
+  height: 3px;
+  background: var(--foreground);
+}
+
+/* Existing Components */
+.aboutGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 0 2rem;
+}
+
+.aboutCard {
+  background: var(--form);
+  padding: 2rem;
+  border-radius: 15px;
+  transition: transform 0.3s ease;
+  border: 1px solid var(--foreground);
+}
+
+.aboutCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.skillsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 2rem;
+  padding: 0 2rem;
+}
+
+.skillCard {
+  background: var(--foreground);
+  padding: 1.5rem;
+  border-radius: 10px;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid var(--transground);
+}
+
+.skillCard:hover {
+  background: var(--transground);
+  transform: scale(1.05);
+}
+
+.skillIcon {
+  width: 60px;
+  height: 60px;
+  background: var(--back);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  font-size: 1.8rem;
+  color: var(--link);
+}
+
+/* New Language Grid */
+.languagesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  padding: 0 2rem;
+}
+
+.languageCard {
+  background: var(--form);
+  padding: 2rem;
+  border-radius: 15px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.languageCard:hover {
+  transform: translateY(-5px);
+}
+
+.flag {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+/* Projects Section */
+.projectsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 0 2rem;
+}
+
+.projectCard {
+  background: var(--foreground);
+  padding: 1.5rem;
+  border-radius: 15px;
+  transition: transform 0.3s ease;
+}
+
+.projectCard:hover {
+  transform: translateY(-5px);
+}
+.projectCard:hover::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+}
+.projectImage {
+  height: 200px;
+  width: 100%;
+  background: var(--back);
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.projectImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+/* Contact Section */
+.contactGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  padding: 0 2rem;
+}
+
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--hover);
+}
+
+.formGroup input,
+.formGroup textarea {
+  width: 100%;
+  padding: 1rem;
+  background: var(--foreground);
+  border: 2px solid var(--transground);
+  border-radius: 8px;
+  color: var(--text);
+  transition: all 0.3s ease;
+}
+
+.formGroup input:focus,
+.formGroup textarea:focus {
+  border-color: var(--link);
+  outline: none;
+}
+
+.submitButton {
+  background: var(--link);
+  color: var(--background);
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+
+
+.submitButton:hover {
+  background: var(--hover);
+  transform: scale(1.05);
+}
+
+.socialLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  
+}
+
+.socialCard {
+  padding-top: 15vh;
+  border-radius: 15px;
+  text-align: center;
+  text-decoration: none;
+  color: var(--text);
+  transition: transform 0.3s ease;
+  font-size: 2.2rem;
+}
+
+.socialCard:hover {
+  transform: translateY(-5px);
+  transition: transform 0.3s ease-out;
+
+}
+
+.socialIcon {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 1rem;
+  
+}
+
+.githubButton {
+  display: inline-block;
+  padding: 1rem 2rem;
+  color: var(--background);
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.githubButton:hover {
+  background: var(--hover);
+  transform: scale(1.1);
+  border-color: var(--text);
+}
+
+/* Scroll Indicator */
+.scrollIndicator {
+  width: 30px;
+  height: 50px;
+  border: 2px solid var(--text);
+  border-radius: 25px;
+  position: absolute;
+  bottom: 50px;
+}
+
+.scrollIndicator::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  width: 6px;
+  height: 6px;
+  background: var(--text);
+  border-radius: 50%;
+  transform: translateX(-50%);
+  animation: scroll 2s infinite;
+}
+
+/* Animations */
+@keyframes scroll {
+  0% {
+    transform: translate(-50%, 0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, 20px);
+    opacity: 0;
+  }
+}
+.floatingShape {
+  position: fixed;
+  opacity: 0.1;
+  animation: float 15s infinite linear;
+  filter: blur(30px);
+}
+.floating {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes neonPulse {
+  0% {
+    text-shadow: 0 0 10px var(--link);
+  }
+  50% {
+    text-shadow: 0 0 20px var(--link), 0 0 30px var(--hover);
+  }
+  100% {
+    text-shadow: 0 0 10px var(--link);
+  }
+}
+@keyframes float {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(100vw, 50vh) rotate(180deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(360deg);
+  }
+}
+/* Responsive Design */
+@media (max-width: 992px) {
+  .photoSection {
+    flex-direction: column;
+    text-align: center;
+    padding: 4rem 1rem;
+  }
+
+  .mainTitle {
+    font-size: 3rem;
+  }
+
+  .subTitle {
+    font-size: 1.5rem;
+  }
+
+  .contactGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: 2.5rem;
+  }
+
+  .aboutGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    margin: 2rem 1rem;
+    padding: 2rem 1rem;
+  }
+
+  .projectImage {
+    height: 150px;
+  }
+
+  .profilePhoto {
+    width: 250px;
+    height: 250px;
+  }
+
+  .mainTitle {
+    font-size: 2.5rem;
+  }
+}
+/* Works in Progress Section Styles */
+.wipGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.wipCard {
+  background: var(--back);
+  border-radius: 15px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--foreground);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.wipCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  border-color: var(--link);
+}
+
+.wipCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--gregrad);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.wipCard:hover::before {
+  opacity: 0.3;
+}
+
+.wipIcon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: inline-block;
+  color: var(--link);
+  text-shadow: 0 0 10px rgba(148, 245, 164, 0.3);
+}
+
+.wipProgressContainer {
+  background: var(--transground);
+  border-radius: 10px;
+  height: 20px;
+  margin-top: 1.5rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.wipProgressContainer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.wipProgress {
+  background: linear-gradient(90deg, var(--foreground), var(--link));
+  height: 100%;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: width 0.5s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.wipProgress span {
+  color: var(--text);
+  font-size: 0.7rem;
+  font-weight: bold;
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Animation for WIP section title */
+.wipTitle {
+  display: inline-block;
+  background: linear-gradient(90deg, var(--foreground), var(--link));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.wipTitle::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--foreground), var(--link));
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: titleUnderline 3s infinite alternate ease-in-out;
+}
+
+@keyframes titleUnderline {
+  0% { transform: scaleX(0); }
+  100% { transform: scaleX(1); }
+}
+
+/* Card content styling */
+.wipCard h3 {
+  color: var(--hover);
+  margin-bottom: 0.5rem;
+}
+
+.wipCard p {
+  color: var(--text);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}

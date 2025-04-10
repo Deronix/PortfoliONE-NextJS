@@ -242,20 +242,20 @@ export default function Portfolio() {
         <div className={styles.aboutGrid}>
           {[1, 2].map((_, i) => (
             <div key={i} className={styles.aboutCard} data-animate>
-              <h3>{i === 0 ? "👨💻 Temel Bilgiler" : "🚀 Teknik Bilgiler"}</h3>
+              <h3>{i === 0 ? "👨💻 Temel Bilgiler" : "🚀 Teknik Bilgiler"}</h3><br></br>
               {i === 0 ? (
                 <>
-                  <p>Doğum Tarihi: 2 Nisan 2008</p>
-                  <p>Şehir: Bornova, İzmir</p>
-                  <p>Eğitim: Göztepe MTAL</p>
-                  <p>İlgi Alanları: Kodlama, 3D Modelleme, Oyun Geliştirme</p>
+                  <p>Doğum Tarihi: 2 Nisan 2008</p> <br></br>
+                  <p>Şehir: Bornova, İzmir</p> <br></br>
+                  <p>Eğitim: Göztepe MTAL</p> <br></br>
+                  <p>İlgi Alanları: Kodlama, 3D Modelleme, Oyun Geliştirme</p> <br></br>
                 </>
               ) : (
                 <>
-                  <p>2+ Yıllık Kodlama Deneyimi</p>
-                  <p>Full-stack Web Geliştirme</p>
-                  <p>3D Modelleme & Render</p>
-                  <p>SQL Veritabanı Yönetimi</p>
+                  <p>2+ Yıllık Kodlama Deneyimi</p> <br></br>
+                  <p>Full-stack Web Geliştirme</p> <br></br>
+                  <p>3D Modelleme & Render</p> <br></br>
+                  <p>SQL Veritabanı Yönetimi</p> <br></br>
                 </>
               )}
             </div>
@@ -299,7 +299,7 @@ export default function Portfolio() {
             {
               title: "Haber Sitesi",
               desc: "Güncel haberleri sunan dinamik web uygulaması",
-              link: "https://github.com/Deronix/FirstNewsProject",
+              link: "https://github.com/Deronix/FirstNewsProject-NextJS",
               img: "/HaberProje.jpg",
             },
           ].map((project, i) => (
